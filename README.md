@@ -1,10 +1,10 @@
 # fi-cyberspace-scan
 
-Local File Inclusion CLI tool written in Python to speed up LFI checks. Similar to using Burp or ZAP, but less bulky and resource intensive. Plus it's in color for easy readability. File lists are included in the app, ranging from basic to verbose. Set different **"Cyber-Attack Modes"**, **Encoded Path Types**, **Deep Directory Traversal** or **NULL Bytes**.
+Local File Inclusion CLI tool written in Python to speed up LFI checks. Similar to using Burp or ZAP, but less bulky and resource intensive. Plus it's in color for easy readability. File lists are included in the app, ranging from basic to verbose. Set different **Cyber-Attack Modes**, unique **Encoded Path Types** or turn on **Deep Directory Traversal** or **NULL Bytes**.
 
-Valid LFI results are based on HTTP response codes, then HTTP response sizes. A non-200 will reult in a failure, and a reflected byte size different from a pre-tested basline will result in a valid find. Valid finds will be displayed in terminal output.
+Valid LFI results are based on HTTP response codes, then HTTP response sizes. A non-200 will result in a failure, then a reflected byte size different from a pre-tested baseline will result in a valid find. Valid finds will be displayed in terminal output.
 
-Before executing the attack, you'll be prompted with the set parameters, then can either confirm & execute OR exit the program. All parameters are preset besides **Target**. Adding these flags will update the set parameters, prior to exectuion.
+Before executing the attack, you'll be prompted with the set parameters, then can either confirm & execute OR exit the program. All parameters are preset besides **Target**. Adding these flags will update the set parameters, prior to execution.
 
 ___
 
@@ -43,11 +43,14 @@ root@case:/#./fi-cyberspace-scan.py -t http://127.0.0.1/cyber.php?= -m 4 -p '..2
 root@case:/#./fi-cyberspace-scan.py -t http://127.0.0.1/cyber.php?= -m kuang-grade-mark-11 -d
 -----------------------------------------------------------------
 ```
+___
 
-Here is a sample output for the [Kuang-Grade-Mark-11](http://www.antonraubenweiss.com/gibson/history/v1/glossary.html) mode, which tests a large directory list. In this case there are valid hits in the root **/** and 4 directories deep **../../../../**. You could initally run the **ICE-Breaker** to verify valid path types.
+## Example
+
+Here is a sample output for the [Kuang-Grade-Mark-11](http://www.antonraubenweiss.com/gibson/history/v1/glossary.html) mode, which tests a large directory list. In this case there are valid hits in the root **/** and 4 directories deep **../../../../** You could initially run the **ICE-Breaker** to verify valid path types.
 
 ```
-root@kali:/home/scripts# python fi-cyberspace-scan.py -t http://172.28.1227.5/cyber.php?space= -m 3
+root@case:/# python fi-cyberspace-scan.py -t http://172.28.1227.5/cyber.php?space= -m 3
 -----------------------------------------------------------------
 '___ *  .    '   \|/     *   .   '      + .----. .  '  -*-    
 |===|     ' __   -*-  FI Cyberspace-Scan  ||'''|_       ' ___ 
