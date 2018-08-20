@@ -50,7 +50,7 @@ ___
 Here is a sample output for the [Kuang-Grade-Mark-11](http://www.antonraubenweiss.com/gibson/history/v1/glossary.html) mode, which tests a large directory list. In this case there are valid hits in the root **/** and 4 directories deep **../../../../** You could initially run the **ICE-Breaker** to verify valid path types.
 
 ```
-root@case:/# python fi-cyberspace-scan.py -t http://172.28.1227.5/cyber.php?space= -m 3
+root@case:/# python fi-cyberspace-scan.py -t http://172.28.227.5/cyber.php?space= -m 3
 -----------------------------------------------------------------
 '___ *  .    '   \|/     *   .   '      + .----. .  '  -*-    
 |===|     ' __   -*-  FI Cyberspace-Scan  ||'''|_       ' ___ 
@@ -58,7 +58,7 @@ root@case:/# python fi-cyberspace-scan.py -t http://172.28.1227.5/cyber.php?spac
 |= =|::| |.|:|==|____|= =| .   ____|==| |::|= =|.|__ '|::|= =|
 |=|=|::|_|.|:|==| :: |_.-`-.__|----|==|_|::|=|=|.|::|_|::|= =|
 -----------------------Hardwired Options-------------------------
-TARGET URL                   : http://172.28.128.3/turing-bolo/bolo.php?bolo=
+TARGET URL                   : http://172.28.227.5/cyber.php?space=
 CYBER ATTACK MODE            : Kuang-Grade-Mark-11
 PATH TYPE                    : ../
 DEEP SPACE TRAVERSAL         : False
