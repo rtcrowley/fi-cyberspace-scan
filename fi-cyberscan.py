@@ -40,10 +40,10 @@ bco.RED+"   3: "+bco.BEG+"ICE-Breaker "+bco.ENC+"           Hardwired LFI Valida
 "   Appends a null-byte %00 to every request.\n"\
 "   Boolean flag. Default is FALSE.\n\n"\
 +bco.BLU+"Examples:\n"\
-+bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyber-scan.py -t http://127.0.0.1/cyber.php?=\n"\
-+bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyber-scan.py -t http://127.0.0.1/cyber.php?= -m ICE-Breaker \n"\
-+bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyber-scan.py -t http://127.0.0.1/cyber.php?= -m 4 -p '..252f' -n \n"\
-+bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyber-scan.py -t http://127.0.0.1/cyber.php?= -m kuang-grade-mark-11 -d\n"\
++bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyberscan.py -t http://127.0.0.1/cyber.php?ai=\n"\
++bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyberscan.py -t http://127.0.0.1/cyber.php?ai= -m ICE-Breaker \n"\
++bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyberscan.py -t http://127.0.0.1/cyber.php?ai= -m 4 -p '..252f' -n \n"\
++bco.BEG+"root@case:/#"+bco.ENC+"./fi-cyberscan.py -t http://127.0.0.1/cyber.php?ai= -m kuang-grade-mark-11 -d\n"\
 +brk
 
 
@@ -228,7 +228,7 @@ def main():
 
   tars = len(sys.argv)  
   if tars == 1:
-    print "---------------------"+bco.BLU+"FI Cyberspace-Scan"+bco.ENC+"--------------------------"
+    print "-----------------------"+bco.BLU+"FI Cyberspace-Scan"+bco.ENC+"------------------------"
     print hep
     exit(1)
 
